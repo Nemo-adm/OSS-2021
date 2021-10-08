@@ -1,0 +1,106 @@
+  159  whoami
+  160  whoaim
+  161  whoami
+  162  whoaim
+  163  echo "Hello World"
+  164  date
+  165  cal
+  166  man cal
+  167  cal 2021 9
+  168  cal 9 2021
+  169  cal 10 2021
+  170  cal 11 2021
+  171  clear
+  172  pwd
+  173  cd /
+  174  cd //
+  175  cd ..
+  176  pwd
+  177  cd /
+  178  pwd
+  179  ls
+  180  ls /var
+  181  cd ~
+  182  cd ..
+  183  pwd
+  184  ls
+  185  ls -l
+  186  mkdir fruits
+  187  cd 
+  188  mkdir fruits
+  189  cd /
+  190  mkdir ~/animals
+  191  touch /tmp/temp
+  192  cd  ~/fruits
+  193  touch apple
+  194  touch banana pineapple lion
+  195  ls
+  196  cd  ~/animals
+  197  touch cat.txt dog.txt elephant.txt
+  198  cd  ~/fruits
+  199  ls -la --full-time
+  200  ls b*
+  201  ls a*
+  202  ls [bi]*
+  203  ls b* i*
+  204  cp /etc/passwd ~
+  205  cat /etc/issue
+  206  cat /etc/issue > apple
+  207  cat apple
+  208  mv lion ~/animals
+  209  mv pineaple pinapple
+  210  wc -l /etc/passwd
+  211  cd ~
+  212  ln -s /etc/passwd passwd_link
+  213  ln .bash_history history_hard
+  214  ls -l .bash_history
+  215  rm fruits/apple
+  216  mkdir rmme
+  217  rmdir rmme
+  218  rmdir fruits
+  219  rm -fr fruits
+  220  sudo cat /etc/passwd /var/log/boot.log
+  221  cp /etc/init.d ~
+  222  cp /etc/init.d/ ~
+  223  cp -r /etc/init.d/ ~
+  224  rm init.d
+  225  sudo rm init.d
+  226  rm -fr init.d
+  227  ls
+  228  cut -d: -f1 /etc/passwd | sort
+  229  man less
+  230  man head
+  231  man tail
+  232  cat /etc/passwd
+  233  cut -d: -f1,3,4 /etc/passwd | column -ts: | less
+  234  cut -d: -f1,3 /etc/passwd | column -ts: | less
+  235  grep :/bin/bash /etc/passwd | wc -l
+  236  man grep
+  237  grep :/bin/bash /etc/passwd | cut -d: -f1 | sort -r
+  238  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | head -25
+  239  rpm -ql man-db | xargs -l du 2> /dev/null | sort -n
+  240  man top
+  241  top -b -n1 | sort -n
+  242  man sort
+  243  cut -d: -f1,3 /etc/passwd | column -ts: | less
+  244   cat /etc/passwd | sort -k 1 | tr -s ':' ' '
+  245  cd /usr/share/doc/git-*
+  246  cat user-manual.txt | tr -cs '[:alpha:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn | head -5
+  247  tr '[:lower:]' '[:upper:]' < user-manual.txt | tr -d '[:punct:] \n\t' | fold -w1 | sort | uniq -c | sort -rn | head -5
+  248  tr -cs '[:alpha:]' '\n' < user-manual.txt | less | grep -E ........ | sort | uniq -c | sort -rn | head
+  249  cd ~
+  250  ping ya.ru
+  251  curl wttr.in
+  252  hostname -I
+  253  curl ifconfig.me
+  254  wget https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README-ru.md
+  255  less README-ru.md
+  256  sudo id
+  257  id
+  258  sudo less /var/log/messages
+  259  less /var/log/messages
+  260  su
+  261  ls
+  262  nano lab1_history.txt 
+  263  rm lab1_history.txt 
+  264  history > lab1_history.txt 
