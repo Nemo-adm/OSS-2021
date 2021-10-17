@@ -1,0 +1,9 @@
+   43  id
+   44  whoami
+   45  exirt
+   46  exit
+   47  chown root file
+   48  chmod 600 file
+   49  chmod 640 file
+   50  history
+   51  history > lab2_root_history.txt

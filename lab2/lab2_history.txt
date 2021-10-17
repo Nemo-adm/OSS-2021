@@ -1,0 +1,48 @@
+  277  mkdir test
+  278  cd test
+  279  touch file
+  280  ls -l
+  281  cdhmod 000 file
+  282  chmod 000 file
+  283  echo test > file
+  284  cat file
+  285  chmod 200 file
+  286  ls -l
+  287  ll
+  288  echo test > file
+  289  cat file
+  290  chmod 240 file
+  291  ll
+  292  cat file
+  293  chmod 640 file
+  294  ls -l
+  295  cat file
+  296  mkdir dir
+  297  touch dir/new_file
+  298  echo dir/new_file > file 2
+  299  cd dir
+  300  l
+  301  ls
+  302  chmod 666 dir
+  303  cd ..
+  304  chmod 666 dir
+  305  cat dir/new_file 
+  306  rm dir/new_file 
+  307  chown root dir
+  308  chgrp root dir
+  309  umask 0022
+  310  touch file1
+  311  ll
+  312  rm file1
+  313  umask 0066
+  314  touch file1
+  315  ll
+  316  umask 0000
+  317  touch file2
+  318  ll
+  319  chmod 600 file
+  320  cat file
+  321  ls -lR
+  322  cd ..
+  323  history
+  324  history > lab2_history.txt
