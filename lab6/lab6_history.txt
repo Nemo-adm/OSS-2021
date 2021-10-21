@@ -1,0 +1,21 @@
+  403  ls -l /dev/sda{,[123]}
+  404  lsblk --list
+  405  cat /proc/diskstats 
+  406  cat /proc/devices
+  407  dd if=/dev/zero of=./fs.img bs=1M count=10
+  408  losetup --find --show ./fs.img
+  409  losetup --list
+  410  mkfs -t ext4 /def/loop0
+  411  blockdev --getbsz /dev/loop0
+  412  df -h /dev/loop0
+  413  df -hi /dev/loop0
+  414  blkid /dev/loop0
+  415  mount /dev/loop0 /mnt
+  416  mount | grep /mnt
+  417  df -h /mnt
+  418  df -hi /mnt
+  419  umount /dev/loop0
+  420  tune2fs -l /dev/loop0
+  421  losetup --detach /dev/loop0
+  422  losetup --list
+  423  history > lab6_history.txt
