@@ -1,0 +1,41 @@
+    1  ldd /bin/login | grep pam
+    2  ls -l /lib64/libpam*
+    3  ls -l /lib64/security
+    4  vi /etc/pam.d/system-auth
+    5  vi /etc/pam.d/su
+    6* 
+    7  sudo vi /etc/pam.d/su
+    8  su -c "hostname mephi"
+    9  su
+   10  sudo vi /etc/pam.d/su
+   11  su
+   12  useradd -G wheel -p password -s /bin/bash nick
+   13  useradd -G wheel -p password -s /bin/bash nikolai
+   14  vi /etc/pam.d/su
+   15  cat /etc/securetty
+   16  sudo cat /etc/securetty
+   17  sudo touch /etc/securetty
+   18  vi /etc/pam.d/login
+   19  man pam_pquality
+   20  man pam_pwquality
+   21  vi /etc/security/pwquality.conf 
+   22  vi /etc/pam.d/su
+   23  vi /etc/pam.d/system-auth
+   24  man pam_limits
+   25  vi /etc/security/pwquality.conf 
+   26  vi /etc/pam.d/system-auth
+   27  sudo passwd nick
+   28  vi scr.c
+   29  nano scr.c
+   30  gcc scr.c -o scr -lpam -lpam_misc
+   31  nano scr.c
+   32  sudo gcc scr.c -o scr -lpam -lpam_misc
+   33  cd /etc/security/limits.conf
+   34  cd /etc/security/limits.d/
+   35  ls
+   36  cd ~/OSS/lab8
+   37  cd /etc/pam.d
+   38  ls
+   39  cd ~/OSS/lab
+   40  cd ~/OSS/lab8
+   41  history > history.txt
