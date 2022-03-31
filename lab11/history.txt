@@ -1,0 +1,13 @@
+    6  yum install gcc gcc-c++ automake autoconf libtool yasm nasm ncurses-devel git ftp rpmdevtools
+    7  uname -r
+    8  rpmdev-setuptree
+    9  rpm -i kernel-3.10.0-514.16.1.el7.centos.plus.src.rpm
+   10  yumdownloader --source kernel
+   11  rpm -i kernel-4.18.0-305.10.2.el7.src.rpm
+   12  ls rpmbuild/SPECS/
+   13  rpmbuild -bs ~/rpmbuild/SPECS/kernel.spec
+   14  ls ~/rpmbuild/SRPMS/
+   15  yum-builddep ~/rpmbuild/SRPMS/kernel-4.18.0-305.10.2.el7.src.rpm
+   16  rpmbuild -bp --target=$(uname -m) rpmbuild/SPECS/kernel.spec
+   17  cd rpmbuild/BUILD/kernel*/linux*
+   18  ls ~/rpmbuild/BUILD/kernel-3.10.0-514.16.1.el7/linux-3.10.0-514.16.1.el7.centos.plus.efanov.x86_64/
