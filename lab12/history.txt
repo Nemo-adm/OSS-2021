@@ -1,0 +1,101 @@
+	from root
+   30  semanage fcontext -l
+   31  touch ~/check_context_file
+   32  semanage fcontext -l | grep check_context_file
+   33  semanage fcontext -l | grep file
+   34  ls
+   35  mount /dev/sda2 /test/ -o defcontext="system_u:object_r:samba_share_t:s0"
+   36  dd if=/dev/zero of=./fs.img bs=1M count=10
+   37  mkfs -t ext4 /dev/loop0
+   38  losetup --find --show ./fs.img
+   39  losetup --list
+   40  mkfs -t ext4 /dev/loop0
+   41  blkid /dev/loop0
+   42  mount /dev/loop0 -o \ context="system_u:object_r:httpd_sys_content_t:s0"
+   43  mount /dev/loop0 /mnt
+   44  mount /dev/loop0 -o \ context="system_u:object_r:httpd_sys_content_t:s0"
+   45  mount /dev/loop0 -o context="system_u:object_r:httpd_sys_content_t:s0"
+   46  mount /dev/loop0 -o defcontext="system_u:object_r:httpd_sys_content_t:s0"
+   47  chcon -R -t httpd_sys_content_t /web/
+   48  mkdir /web/
+   49  chcon -R -t httpd_sys_content_t /web/
+   50  touch /etc/file1
+   51  semanage fcontext -a -t samba_share_t /etc/file1
+   52  ls -Z /etc/file1
+   53  cat /etc/selinux/targeted/contexts/files/file_contexts.local | grep file1
+   54  rm -i /etc/file1
+   55  semanage fcontext -d /etc/file1
+   56  /sbin/restorecon -R -v /web/
+   57  /sbin/restorecon -R  /etc/file1
+   58  /sbin/restorecon -v  /etc/file1
+   59  restorecon -v  /etc/file1
+   60  sesearch -T -s httpd_t -t var_log_t
+   61  sesearch -T -s httpd_t -t tmp_t
+
+
+        from user
+   15  ldd /bin/ls | grep selinux
+   16  ls -l /etc/selinux/
+   17  ls -l /etc/selinux/targeted/
+   18  id -Z
+   19  ls -Z /etc/passwd /etc/group /etc/shadow
+   20  ls -Z /etc/login.defs /etc/sudoers
+   21  ls -Z /usr/bin/passwd
+   22  ls -Z /usr/sbin/useradd
+   23   getfattr -n security.selinux /etc/passwd
+   24  ps Zaux
+   25  ls /proc/$$/attr
+   26  ps Z $(pgrep passwd)
+   27  netstat -tnlpZ
+   28  sestatus
+   29  getenforce
+   30  cat /sys/fs/selinux/enforce
+   31  nano /etc/selinux/config
+   32  setenforce 1
+   33  echo 1 > /sys/fs/selinux/enforce
+   34  cat /sys/fs/selinux/enforce
+   35  getsebool -a | grep httpd
+   36  seinfo
+   37  su
+   38  seinfo
+   39  seinfo -cfile -x
+   40  seinfo --class | grep file
+   41  seinfo --class file -x
+   42  seinfo --common file -x
+   43  seinfo --commonfile -x
+   44* seinfo --c -x
+   45  seinfo --help
+   46  seinfo --cdir
+   47  seinfo --cdir -x
+   48  seinfo --class | grep dir
+   49  seinfo --cdir --stats
+   50  seinfo --cdir -v
+   51  seinfo --cdir -V
+   52  seinfo --cdir -x
+   53  seinfo --cdir --expand
+   54  seinfo --cdir --l
+   55  seinfo --cdir -l
+   56  seinfo --cdir --stats
+   57  seinfo --cblk_file --stats
+   58  seinfo --cblk_file --v
+   59  seinfo --cblk_file -v
+   60  seinfo --cblk_file -h
+   61  seinfo --cblk_file -l
+   62  seinfo --cblk_file -x
+   63  seinfo --common file -x
+   64  seinfo --common dir -x
+   65  seinfo --common dir
+   66  grep 'httpd_.*_t' /etc/selinux/targeted/contexts/files/file_contexts
+   67  semanage fcontext -l
+   68  su
+   69  semanage fcontext -l
+   70  su
+   71  sesearch --allow --source passwd_t --target shadow_t --class file
+   72  sesearch --allow --source passwd_t --target shadow_t --class file
+   73  sesearch -A -s passwd_t -t passwd_exec_t -c file
+   74  sesearch -A -s unconfined_t -t passwd_exec_t -c file
+   75  sesearch -A -s unconfined_t -t passwd_t -c process
+   76  sesearch --type_trans -s unconfined_t -t passwd_exec_t
+   77  sesearch --help
+   78  sesearch --role_trans -s unconfined_t -t passwd_exec_t
+   79  history > history.txt
