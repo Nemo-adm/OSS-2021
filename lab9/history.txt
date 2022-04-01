@@ -1,0 +1,82 @@
+  436  ps haf
+  437  ps xawf -eo pid,user,cgroup,args
+  438  systemd-cgls
+  439  ls -l /usr/lib/systemd/system/
+  440  ls -l /run/systemd/system/
+  441  ls -l /etc/systemd/system/
+  442  systemctl -t help
+  443  systemctl status
+  444  systemctl --type=service
+  445  systemctl --type=target
+  446  systemctl --type audit.service
+  447  systemctl --type auditd.service
+  448  systemctl status auditd.service
+  449  systemctl is-active auditd.service
+  450  systemctl is-enabled auditd.service
+  451  systemctl list-dependencies --after auditd.service
+  452  systemctl list-dependencies --before auditd.service 
+  453  systemctl list-units --type=service
+  454  systemctl list-units --type=service --all
+  455  systemctl list-units --type=socket --all
+  456  systemctl list-unit-files --type=service
+  457  systemctl --failed --type=service
+  458  systemctl status httpd.service
+  459  systemctl start httpd.service
+  460  systemctl status httpd.service
+  461  systemctl restart httpd.service
+  462  systemctl status httpd.service
+  463  systemctl restart httpd.service
+  464  systemctl status httpd.service
+  465  systemctl stop httpd.service
+  466  systemctl enable httpd.service
+  467  systemctl status httpd.service
+  468  systemctl start httpd.service
+  469  systemctl disable httpd.service
+  470  systemctl mask httpd.service
+  471  systemctl status httpd.service
+  472  systemctl start httpd.service
+  473  systemctl unmask httpd.service
+  474  systemctl list-units --type=target
+  475  systemctl list-units --type=target -all
+  476  systemctl get-default
+  477  ls -l /etc/systemd/system/default.target
+  478  systemctl set-default multi-user.target
+  479  systemctl isolate multi-user.target
+  480  systemctl isolate rescue.target
+  481  systemctl --no-wall rescue
+  482  systemtcl isolate emergency.target
+  483  systemctl isolate emergency.target
+  484  systemtcl poweroff
+  485  systemctl poweroff
+  486  systemctl halt
+  487  systemctl --no-wall reboot
+  488  systemctl get-default
+  489  systemctl set-default graphical.target
+  490  su
+  491  sudo systemctl set-default graphical.target
+  492  systemctl --no-wall poweroff shutdown --poweroff 18:36
+  493  shutdown --halt +5
+  494  shutdown -c
+  495  systemctl --no-wall reboot
+  496  hostnamectl
+  497  localectl
+  498  loginctl
+  499  loginctl session-status 2
+  500  loginctl show-user user1
+  501  nano mephi.service
+  502  cat mephi.service
+  503  ls -lZ mephi.service
+  504  journalctl -b
+  505  aausearch -c 'systemd' --raw | audit2allow -M my-systemd
+  506  ausearch -c 'systemd' --raw | audit2allow -M my-systemd
+  507  semodule -X 300 -i my-systemd.pp
+  508  ausearch -m avc -ts recent
+  509  systemctl start mephi.service
+  510  journalctl start mephi.service
+  511  journalctl -u mephi.service
+  512  nano mephi.path
+  513  cat mephi.path
+  514  systemctl enable mephi.path
+  515  systemctl start mephi.path
+  516  touch /tmp/mephi.file
+  517  history > history.txt
