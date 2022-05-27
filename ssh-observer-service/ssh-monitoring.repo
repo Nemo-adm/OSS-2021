@@ -1,0 +1,5 @@
+[ssh-monitoring-repo]
+name=ssh-monitoring-repo
+baseurl=http://localhost/ssh-monitoring-repo
+enabled=1
+gpgkey=http://localhost/ssh-monitoring-repo/RPM-GPG-KEY-Nick-Izyurov
